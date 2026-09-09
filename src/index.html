@@ -11,6 +11,8 @@
     <header>
       <h1>PES University</h1>
       <p class="subtitle">Software Engineering & DevOps Workshop</p>
+      <!-- Replace YOUR_USERNAME/YOUR_REPO with your actual GitHub path -->
+      <img class="badge" src="https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/deploy.yml/badge.svg" alt="Build Status">
     </header>
 
     <!-- Navigation Tabs -->
@@ -54,19 +56,77 @@
           <li><strong>Recent Project:</strong> Built and deployed an e-waste Resell Price Predictor using Python, Scikit-learn, and Streamlit.</li>
         </ul>
 
+        <h3>Skills</h3>
+        <div class="skills">
+          <div class="skill">
+            <div class="skill-label"><span>Python</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-label"><span>C</span><span>75%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 75%;"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-label"><span>MERN Stack</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 80%;"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-label"><span>Machine Learning</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
+          </div>
+        </div>
+
         <h3>Research & Projects</h3>
         <ul>
           <li><strong>ChainCheck (VC Technical Risk Interrogator):</strong> A multi-hop question generation pipeline for automated VC due diligence — ingests pitch decks, GitHub repos, and patent filings, builds a heterogeneous knowledge graph, and generates adversarial investor questions. Built during a Research Internship at the CDSAML/CCBD Lab.</li>
           <li><strong>CyberGuard AI:</strong> Completed during an internship at Pearlarc Systems.</li>
         </ul>
 
+        <h3>Experience Timeline</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Research Intern, CDSAML/CCBD Lab</h4>
+              <p>Built ChainCheck — a multi-hop QA pipeline for automated VC due diligence.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Intern, Pearlarc Systems</h4>
+              <p>Worked on the CyberGuard AI project.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Personal Project</h4>
+              <p>Built and deployed an e-waste Resell Price Predictor using Python, Scikit-learn, and Streamlit.</p>
+            </div>
+          </div>
+        </div>
+
         <h3>Interests</h3>
         <ul>
           <li>Competitive programming — interval-merging, palindrome, and binary-string problem sets</li>
           <li>System-level debugging and building AI-powered tools</li>
         </ul>
+
+        <h3>Contact</h3>
+        <div class="contact-links">
+          <!-- Replace # with your actual profile URLs -->
+          <a href="#" target="_blank" rel="noopener">GitHub</a>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:your-email@example.com">Email</a>
+        </div>
       </div>
     </main>
+
+    <footer class="site-footer">
+      <p>Last updated: <span id="build-date"></span></p>
+      <p>Build: <span id="build-hash">local</span></p>
+    </footer>
   </div>
 
   <script>
@@ -81,6 +141,12 @@
         .find(b => b.getAttribute('onclick')?.includes(tabId));
       if (targetBtn) targetBtn.classList.add('active');
     }
+
+    // Footer build info — shows the page load date.
+    // For a real commit hash, inject it via GitHub Actions (see note below).
+    document.getElementById('build-date').textContent = new Date().toLocaleDateString('en-IN', {
+      year: 'numeric', month: 'long', day: 'numeric'
+    });
   </script>
 </body>
 </html>
